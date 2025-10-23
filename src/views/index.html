@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VetSys - Sistema Veterinário</title>
+    <link rel="stylesheet" href="../public/css/style.css">
+    <script src="/src/public/js/script"></script>
+</head>
+<body>
+    <script src="../public/js/script.js"></script>
+    <div class="dashboard-container">
+        
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="fas fa-paw"></i> VetSys
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active" data-page="inicio">
+                    <i class="fas fa-home"></i> Início
+                </a>
+                <a href="#" class="nav-item" data-page="pacientes">
+                    <i class="fas fa-users"></i> Pacientes
+                </a>
+                <a href="#" class="nav-item" data-page="consultas">
+                    <i class="fas fa-notes-medical"></i> Consultas
+                </a>
+                <a href="#" class="nav-item" data-page="agendamento">
+                    <i class="fas fa-calendar-alt"></i> Agendamento
+                </a>
+                <a href="#" class="nav-item" data-page="estoque">
+                    <i class="fas fa-box"></i> Estoque
+                </a>
+                <a href="#" class="nav-item" data-page="financeiro">
+                    <i class="fas fa-dollar-sign"></i> Financeiro
+                </a>
+                <a href="#" class="nav-item" data-page="relatorios">
+                    <i class="fas fa-chart-line"></i> Relatórios
+                </a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            
+            <header class="header">
+                <div class="header-title" id="page-title">Início</div>
+                <div class="user-profile">
+                    <span>Dr.Anderson</span>
+                    <i class="fas fa-user-circle"></i>
+                </div>
+            </header>
+
+            <section class="content-area">
+                <div id="page-inicio" class="page-content active-page">
+                    <div class="quick-summary">
+                        <div class="summary-card total-pacientes">
+                            <h3>Total de Pacientes</h3>
+                            <p>0</p>
+                            <i class="fas fa-dog"></i>
+                        </div>
+                        <div class="summary-card consultas-hoje">
+                            <h3>Consultas Hoje</h3>
+                            <p>0</p>
+                            <i class="fas fa-calendar-day"></i>
+                        </div>
+                        <div class="summary-card procedimentos-mes">
+                            <h3>Procedimentos (Mês)</h3>
+                            <p>0</p>
+                            <i class="fas fa-syringe"></i>
+                        </div>
+                    </div>
+
+                    <div class="next-appointments-card">
+                        <h2>Próximas Consultas</h2>
+                        <ul>
+                            <li>
+                                <strong>10:00</strong> - Max (Golden Retriever) - Vacinação
+                            </li>
+                            <li>
+                                <strong>11:30</strong> - Mia (Siamês) - Exame de Rotina
+                            </li>
+                            <li>
+                                <strong>14:00</strong> - Pipo (Bulldog Francês) - Retorno Anemia
+                            </li>
+                        </ul>
+                    </div>
+
+                    </div>
+                
+                    <!--PAGINA DE GERENCIAMENTO DE PACIENTE-->
+
+                <div id="page-pacientes" class="page-content">
+                    <h2>Gerenciamento de Pacientes</h2>
+                    <p>Conteúdo da página de Pacientes (lista, adicionar, editar... ).</p>
+                </div>
+                    <!--PAGINA DE REGISTRO DE CONSULTAS-->
+                <div id="page-consultas" class="page-content">
+                    <h2>Registro de Consultas</h2>
+                    <p>Conteúdo da página de Consultas (criar nova, histórico...).</p>
+                </div>
+
+                </section>
+
+        </main>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

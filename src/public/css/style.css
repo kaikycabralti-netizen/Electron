@@ -1,0 +1,206 @@
+/* Importação de Fonte */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+    --primary-color: #007bff; /* Azul primário */
+    --secondary-color: #6c757d; /* Cinza secundário */
+    --background-light: #f4f7f6; /* Fundo claro */
+    --text-dark: #343a40; /* Texto escuro */
+    --text-light: #ffffff; /* Texto claro */
+    --sidebar-width: 250px;
+    --header-height: 60px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* Layout Principal do Dashboard usando Grid */
+.dashboard-container {
+    display: grid;
+    grid-template-columns: var(--sidebar-width) 1fr;
+    height: 100vh;
+}
+
+/* Barra Lateral (Sidebar) */
+.sidebar {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+    padding: 10px 0 30px 0;
+}
+
+.logo i {
+    margin-right: 10px;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-item:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: var(--text-light);
+}
+
+.nav-item.active {
+    background-color: #0056b3; /* Um tom mais escuro */
+    color: var(--text-light);
+    border-left: 5px solid #ffc107; /* Destaque amarelo/laranja */
+    padding-left: 15px; /* Ajuste para o padding lateral */
+}
+
+.nav-item i {
+    margin-right: 15px;
+    font-size: 1.2rem;
+}
+
+/* Conteúdo Principal */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+/* Cabeçalho */
+.header {
+    height: var(--header-height);
+    background-color: var(--text-light);
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.header-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.user-profile i {
+    font-size: 1.8rem;
+    color: var(--secondary-color);
+    margin-left: 10px;
+}
+
+/* Área de Conteúdo Dinâmico */
+.content-area {
+    padding: 30px;
+    flex-grow: 1;
+}
+
+.page-content {
+    display: none; /* Oculta todas as páginas por padrão */
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.page-content.active-page {
+    display: block; /* Mostra apenas a página ativa */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Estilos Específicos do Dashboard (Página Início) */
+.quick-summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.summary-card {
+    background-color: var(--text-light);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.summary-card h3 {
+    font-size: 1rem;
+    color: var(--secondary-color);
+    margin-bottom: 5px;
+}
+
+.summary-card p {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.summary-card i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    opacity: 0.2;
+}
+
+.next-appointments-card {
+    background-color: var(--text-light);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.next-appointments-card h2 {
+    font-size: 1.3rem;
+    color: var(--text-dark);
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.next-appointments-card ul {
+    list-style: none;
+}
+
+.next-appointments-card li {
+    padding: 10px 0;
+    border-bottom: 1px dashed #e9ecef;
+}
+
+.next-appointments-card li:last-child {
+    border-bottom: none;
+}
