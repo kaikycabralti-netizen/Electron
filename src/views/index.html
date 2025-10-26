@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VetSys - Sistema Veterinário</title>
     <link rel="stylesheet" href="../public/css/style.css">
-    <script src="/src/public/js/script"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="../public/js/script.js"></script>
 </head>
 <body>
-    <script src="../public/js/script.js"></script>
+
     <div class="dashboard-container">
         
         <aside class="sidebar">
@@ -45,27 +46,28 @@
             <header class="header">
                 <div class="header-title" id="page-title">Início</div>
                 <div class="user-profile">
-                    <span>Dr.Anderson</span>
+                    <span>Dr. Ana Silva</span>
                     <i class="fas fa-user-circle"></i>
                 </div>
             </header>
 
             <section class="content-area">
+                
                 <div id="page-inicio" class="page-content active-page">
                     <div class="quick-summary">
                         <div class="summary-card total-pacientes">
                             <h3>Total de Pacientes</h3>
-                            <p>0</p>
+                            <p>89</p>
                             <i class="fas fa-dog"></i>
                         </div>
                         <div class="summary-card consultas-hoje">
                             <h3>Consultas Hoje</h3>
-                            <p>0</p>
+                            <p>5</p>
                             <i class="fas fa-calendar-day"></i>
                         </div>
                         <div class="summary-card procedimentos-mes">
                             <h3>Procedimentos (Mês)</h3>
-                            <p>0</p>
+                            <p>12</p>
                             <i class="fas fa-syringe"></i>
                         </div>
                     </div>
@@ -84,27 +86,203 @@
                             </li>
                         </ul>
                     </div>
-
-                    </div>
-                
-                    <!--PAGINA DE GERENCIAMENTO DE PACIENTE-->
+                </div>
 
                 <div id="page-pacientes" class="page-content">
-                    <h2>Gerenciamento de Pacientes</h2>
-                    <p>Conteúdo da página de Pacientes (lista, adicionar, editar... ).</p>
+                    <div class="patients-header">
+                        <h2>Gerenciamento de Pacientes</h2>
+                        <button class="add-patient-btn">
+                            <i class="fas fa-plus"></i> Novo Paciente
+                        </button>
+                    </div>
+
+                    <div class="patients-table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>Tutor</th>
+                                    <th>Espécie</th>
+                                    <th>Raça</th>
+                                    <th>Última Consulta</th>
+                                    <th>Status</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Max</td>
+                                    <td>Dr. Ana Silva</td>
+                                    <td>Canino</td>
+                                    <td>Golden Retriever</td>
+                                    <td>10/03/2024</td>
+                                    <td><span class="status-badge active">Ativo</span></td>
+                                    <td>
+                                        <button class="action-btn view"><i class="fas fa-eye"></i></button>
+                                        <button class="action-btn edit"><i class="fas fa-edit"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Mia</td>
+                                    <td>João Santos</td>
+                                    <td>Felino</td>
+                                    <td>Siamês</td>
+                                    <td>05/03/2024</td>
+                                    <td><span class="status-badge active">Ativo</span></td>
+                                    <td>
+                                        <button class="action-btn view"><i class="fas fa-eye"></i></button>
+                                        <button class="action-btn edit"><i class="fas fa-edit"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Pipo</td>
+                                    <td>Carla Mendes</td>
+                                    <td>Canino</td>
+                                    <td>Bulldog Francês</td>
+                                    <td>01/03/2024</td>
+                                    <td><span class="status-badge inactive">Inativo</span></td>
+                                    <td>
+                                        <button class="action-btn view"><i class="fas fa-eye"></i></button>
+                                        <button class="action-btn edit"><i class="fas fa-edit"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="table-footer">
+                        <p>Total de Pacientes: **3**</p>
+                    </div>
                 </div>
-                    <!--PAGINA DE REGISTRO DE CONSULTAS-->
+
                 <div id="page-consultas" class="page-content">
-                    <h2>Registro de Consultas</h2>
-                    <p>Conteúdo da página de Consultas (criar nova, histórico...).</p>
+                    <div class="consultas-container">
+                        <div class="consulta-form-card">
+                            <h2>Criar Nova Consulta</h2>
+                            <form class="new-consult-form">
+                                <div class="form-group">
+                                    <label for="paciente-consulta">Paciente:</label>
+                                    <select id="paciente-consulta" required>
+                                        <option value="">Selecione um paciente</option>
+                                        <option value="max">Max (Golden Retriever)</option>
+                                        <option value="mia">Mia (Siamês)</option>
+                                        <option value="pipo">Pipo (Bulldog Francês)</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="veterinario-consulta">Veterinário:</label>
+                                    <select id="veterinario-consulta" required>
+                                        <option value="ana">Dr. Ana Silva</option>
+                                        <option value="carlos">Dr. Carlos Souza</option>
+                                    </select>
+                                </div>
+                                <div class="form-group half-width">
+                                    <label for="data-consulta">Data:</label>
+                                    <input type="date" id="data-consulta" required>
+                                </div>
+                                <div class="form-group half-width">
+                                    <label for="hora-consulta">Hora:</label>
+                                    <input type="time" id="hora-consulta" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="motivo-consulta">Motivo/Queixa Principal:</label>
+                                    <textarea id="motivo-consulta" rows="3" required></textarea>
+                                </div>
+                                <button type="submit" class="add-patient-btn">Salvar Consulta</button>
+                            </form>
+                        </div>
+
+                        <div class="historic-consults-card">
+                            <h2>Histórico Recente</h2>
+                            <ul class="consult-list">
+                                <li>
+                                    <strong>10/05/2025</strong> - Max (Golden) - *Vacinação Anual*
+                                    <i class="fas fa-file-medical view-record"></i>
+                                </li>
+                                <li>
+                                    <strong>03/05/2025</strong> - Mia (Siamês) - *Revisão de Pele*
+                                    <i class="fas fa-file-medical view-record"></i>
+                                </li>
+                                <li>
+                                    <strong>25/04/2025</strong> - Pipo (Bulldog) - *Exames de Sangue*
+                                    <i class="fas fa-file-medical view-record"></i>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
 
-                </section>
+                <div id="page-agendamento" class="page-content">
+                    <h2>Agendamento e Calendário</h2>
+                    <div class="calendar-header">
+                        <button class="cal-nav-btn"><i class="fas fa-chevron-left"></i></button>
+                        <h3>Outubro 2025</h3>
+                        <button class="cal-nav-btn"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                    
+                    <div class="calendar-grid">
+                        <div class="cal-day header">Dom</div>
+                        <div class="cal-day header">Seg</div>
+                        <div class="cal-day header">Ter</div>
+                        <div class="cal-day header">Qua</div>
+                        <div class="cal-day header">Qui</div>
+                        <div class="cal-day header">Sex</div>
+                        <div class="cal-day header">Sáb</div>
 
-        </main>
+                        <div class="cal-day past">28</div>
+                        <div class="cal-day past">29</div>
+                        <div class="cal-day past">30</div>
+                        <div class="cal-day">1</div>
+                        <div class="cal-day">2</div>
+                        <div class="cal-day">3</div>
+                        <div class="cal-day">4</div>
+                        <div class="cal-day active has-appointment">
+                            5 
+                            <span class="appointment-count">3</span>
+                        </div>
+                        <div class="cal-day">6</div>
+                        <div class="cal-day">7</div>
+                        <div class="cal-day">8</div>
+                        <div class="cal-day">9</div>
+                        <div class="cal-day">10</div>
+                        <div class="cal-day">11</div>
+                        <div class="cal-day">12</div>
+                        <div class="cal-day">13</div>
+                        <div class="cal-day has-appointment">14</div>
+                        <div class="cal-day">15</div>
+                        <div class="cal-day">16</div>
+                        <div class="cal-day">17</div>
+                        <div class="cal-day">18</div>
+                        <div class="cal-day">19</div>
+                        <div class="cal-day">20</div>
+                        <div class="cal-day">21</div>
+                        <div class="cal-day">22</div>
+                        <div class="cal-day">23</div>
+                        <div class="cal-day">24</div>
+                        <div class="cal-day">25</div>
+                        <div class="cal-day">26</div>
+                        <div class="cal-day">27</div>
+                        <div class="cal-day">28</div>
+                        <div class="cal-day">29</div>
+                        <div class="cal-day">30</div>
+                        <div class="cal-day">31</div>
+                        <div class="cal-day past">1</div>
+                    </div>
 
-    </div>
+                    <div class="appointment-legend">
+                        <span class="legend-item"><i class="fas fa-circle active"></i> Hoje</span>
+                        <span class="legend-item"><i class="fas fa-circle has-appointment-dot"></i> Com Agendamento</span>
+                    </div>
+                </div>
 
-    <script src="script.js"></script>
-</body>
-</html>
+                <div id="page-estoque" class="page-content">
+                    <h2>Controle de Estoque e Inventário</h2>
+                    
+                    <div class="inventory-summary">
+                        <div class="summary-card total-items">
+                            <h3>Total de Itens</h3>
+                            <p>150</p>
+                        </div>
+                        <div class="summary-card low-stock">
+                            <h3>Estoque Baixo</h3>
+                            <p class="warning

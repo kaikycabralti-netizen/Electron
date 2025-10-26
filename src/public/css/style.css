@@ -141,8 +141,8 @@ body {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Estilos Específicos do Dashboard (Página Início) */
-.quick-summary {
+/* --- Estilos Comuns (Dashboard e Cards de Resumo) --- */
+.quick-summary, .inventory-summary, .finance-summary {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
@@ -177,6 +177,7 @@ body {
     opacity: 0.2;
 }
 
+/* Estilos Específicos do Dashboard (Página Início) */
 .next-appointments-card {
     background-color: var(--text-light);
     padding: 25px;
@@ -203,4 +204,387 @@ body {
 
 .next-appointments-card li:last-child {
     border-bottom: none;
+}
+
+/* --- Estilos para a Página de Pacientes e Tabelas --- */
+
+.patients-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.add-patient-btn {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.add-patient-btn:hover {
+    background-color: #0056b3;
+}
+
+.add-patient-btn i {
+    margin-right: 8px;
+}
+
+.patients-table-container, .stock-table-container {
+    background-color: var(--text-light);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    overflow-x: auto;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.data-table th, .data-table td {
+    padding: 15px;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.data-table th {
+    background-color: #f8f9fa;
+    color: var(--text-dark);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+.data-table tbody tr:hover {
+    background-color: #f0f3f5;
+}
+
+/* Estilos para Status Badge */
+.status-badge {
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-light);
+}
+
+.status-badge.active {
+    background-color: #28a745; /* Verde para Ativo */
+}
+
+.status-badge.inactive {
+    background-color: var(--secondary-color); /* Cinza para Inativo */
+}
+
+/* Estilos para Botões de Ação na Tabela */
+.action-btn {
+    background: none;
+    border: 1px solid #ccc;
+    color: var(--secondary-color);
+    padding: 8px;
+    margin-left: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.action-btn:hover {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    border-color: var(--primary-color);
+}
+
+.table-footer {
+    margin-top: 20px;
+    padding: 10px 0;
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    text-align: right;
+}
+
+/* --- Estilos para as Páginas de Consultas e Formulários --- */
+
+.consultas-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+}
+
+.consulta-form-card, .historic-consults-card, .report-generation-card, .download-history-card {
+    background-color: var(--text-light);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.new-consult-form, .report-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.form-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group.half-width {
+    width: calc(50% - 7.5px);
+}
+
+.form-group label {
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--text-dark);
+}
+
+.new-consult-form input, 
+.new-consult-form select, 
+.new-consult-form textarea,
+.report-form input,
+.report-form select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.consult-list {
+    list-style: none;
+    padding: 0;
+}
+
+.consult-list li {
+    padding: 10px 0;
+    border-bottom: 1px dashed #e9ecef;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.view-record {
+    color: var(--primary-color);
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.view-record:hover {
+    color: #0056b3;
+}
+
+
+/* --- Estilos para a Página de Agendamento (Calendário) --- */
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    background-color: var(--text-light);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.calendar-header h3 {
+    margin: 0;
+}
+
+.cal-nav-btn {
+    background: none;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.cal-nav-btn:hover {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    background-color: var(--text-light);
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.cal-day {
+    padding: 15px 5px;
+    text-align: right;
+    border: 1px solid #eee;
+    background-color: #fcfcfc;
+    border-radius: 4px;
+    min-height: 80px;
+    position: relative;
+    cursor: pointer;
+}
+
+.cal-day.header {
+    text-align: center;
+    font-weight: 600;
+    background-color: var(--background-light);
+    border: none;
+    padding: 10px 5px;
+}
+
+.cal-day.past {
+    color: #ccc;
+}
+
+.cal-day.active {
+    background-color: #fff3cd; /* Cor de destaque (amarelo claro) */
+    border: 2px solid #ffc107;
+}
+
+.cal-day.has-appointment {
+    background-color: #e6f7ff; /* Azul mais claro */
+}
+
+.appointment-count {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    background-color: #dc3545; /* Vermelho para contagem */
+    color: var(--text-light);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+
+.appointment-legend {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+    font-size: 0.9rem;
+}
+
+.appointment-legend i {
+    margin-right: 5px;
+    font-size: 0.7rem;
+}
+
+.appointment-legend .active { color: #ffc107; }
+.appointment-legend .has-appointment-dot { color: #007bff; }
+
+
+/* --- Estilos para a Página de Estoque --- */
+
+.inventory-summary .summary-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.inventory-summary .warning-count {
+    color: #dc3545; /* Vermelho para destaque */
+}
+
+.status-badge.low-stock-alert {
+    background-color: #ffc107; /* Amarelo de alerta */
+    color: var(--text-dark);
+}
+
+/* --- Estilos para a Página Financeiro --- */
+
+.finance-summary .summary-card.revenue p { color: #28a745; } /* Verde */
+.finance-summary .summary-card.expenses p { color: #dc3545; } /* Vermelho */
+.finance-summary .summary-card.profit p { color: var(--primary-color); } /* Azul */
+
+.finance-area-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+}
+
+.chart-container {
+    background-color: var(--text-light);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.placeholder-chart {
+    height: 250px;
+    background-color: #f8f9fa;
+    border: 1px dashed #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+    color: var(--secondary-color);
+}
+
+.recent-transactions {
+    background-color: var(--text-light);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.transaction-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+}
+
+.transaction-list li {
+    padding: 10px 0;
+    border-bottom: 1px dashed #e9ecef;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.95rem;
+}
+
+.transaction-list .income { color: #28a745; }
+.transaction-list .expense { color: #dc3545; }
+
+
+/* --- Estilos para a Página de Relatórios --- */
+
+.report-generation-card {
+    margin-bottom: 30px;
+}
+
+.download-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+}
+
+.download-list li {
+    padding: 10px 0;
+    border-bottom: 1px dashed #e9ecef;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.download-list li a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.download-list li a:hover {
+    color: #0056b3;
 }
